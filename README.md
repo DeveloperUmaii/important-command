@@ -85,3 +85,15 @@ export default router;</pre>
 
 ### Run Project
 <pre lang="markdown">npm run dev</pre>
+
+
+# git-command
+<pre lang="markdown">git init
+</pre>
+<pre lang="markdown">git add .
+</pre>
+<pre lang="markdown">git commit -m "first commit"</pre>
+<pre lang="markdown">git branch -M main
+</pre>
+<pre lang="markdown">git remote add origin এইখানে  রিপোজিটরীর অরিজিন সেট করো</pre>
+<pre lang="markdown">git push -u origin main</pre>
