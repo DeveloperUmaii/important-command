@@ -14,6 +14,9 @@
 ### Initial installations required
 <pre lang="markdown">npm install -D tailwindcss@3 postcss autoprefixer daisyui@latest</pre>
 
+###  React-Router-Dom রিয়াক্ট রাউটার ডম পরে আলাদাভাবে ইন্সটল করতে হয়
+<pre lang="markdown">npm install react-router-dom</pre>
+
 
 ### Config file and Postcss file Create
 <pre lang="markdown">npx tailwindcss init -p</pre>
