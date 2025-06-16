@@ -3,6 +3,9 @@
 
 ### Creat Project
 
+<!-- 
+<pre lang="markdown">C o m m a n d</pre>
+ -->
 <pre lang="markdown">npm create vite@latest name-of-your-project -- --template react</pre>
 
 #### Cd name-of-your-project
@@ -12,7 +15,7 @@
 <pre lang="markdown">npm install -D tailwindcss@3 postcss autoprefixer daisyui@latest</pre>
 
 
-### Config file and Postcss file Creat
+### Config file and Postcss file Create
 <pre lang="markdown">npx tailwindcss init -p</pre>
 
 
@@ -30,11 +33,54 @@ export default {
 }
 </pre>
 
+#### main.jsx বা এন্ট্রি জায়গায় CSS ইমপোর্ট  করতে হবে
+<pre lang="markdown">import './index.css';</pre>
+
+
+### main.jsx file
+<pre lang="markdown">import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'  // ইমপোর্ট না করলে টেল উইন্ড কাজ করবে না ইনডেক্স সিএসএস
+import { RouterProvider } from 'react-router-dom'
+import router from './routes/Routes' // রাউটারটাকে পুনরায় আবার ইমপোর্ট করতে হবে
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+        <RouterProvider router={router} />
+  </React.StrictMode>
+);</pre>
 
 ### index.css or main.css ফাইল
 <pre lang="markdown">@tailwind base;
 @tailwind components;
 @tailwind utilities;</pre>
+
+
+### Router file 
+<pre lang="markdown">import { createBrowserRouter } from 'react-router-dom'
+import Main from '../layouts/LayOut'
+import Home from '../pages/Home'
+import Login from '../pages/Authentication/Login'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <LayOut />,
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: '/jobs',
+        element: <Login />,
+      },
+    ],
+  },
+])
+
+export default router;</pre>
 
 
 ### Run Project
