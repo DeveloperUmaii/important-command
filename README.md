@@ -45,9 +45,9 @@ import { RouterProvider } from 'react-router-dom'
 import router from './routes/Routes' // রাউটারটাকে পুনরায় আবার ইমপোর্ট করতে হবে
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <!-- <React.StrictMode>
-        <RouterProvider router={router} />
-  </React.StrictMode -->
+  React.StrictMode >
+        RouterProvider router={router} />
+  React.StrictMode />
 );</pre>
 
 ### index.css or main.css ফাইল
@@ -65,22 +65,22 @@ import Login from '../pages/Authentication/Login'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LayOut />,
-    // errorElement: <ErrorPage />,
+    element: LayOut />,
+    // errorElement: ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: Home />,
       },
       {
         path: '/jobs',
-        element: <Login />,
+        element: Login />,
       },
     ],
   },
 ])
 
-export default router;</pre>
+export default router;/pre>
 
 
 ### Run Project
