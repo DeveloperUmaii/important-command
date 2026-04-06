@@ -1,77 +1,79 @@
 📘 React + Vite Project Setup Guide
-🚀 Step 1: Create Project
+## 🚀 Step 1: Create Project
 
 👉 প্রথমে একটা নতুন ফোল্ডার তৈরি করো (যেকোনো নাম দিয়ে)
 
 👉 তারপর terminal open করে নিচের command দাও:
 
 <pre lang="markdown">npm create vite@latest name-of-your-project -- --template react</pre>
-📁 Step 2: Enter Project Folder
+ ## Step 2: Enter Project Folder
 <pre lang="markdown">cd name-of-your-project</pre>
-📦 Step 3: Install Initial Dependencies
+## 📦 Step 3: Install Initial Dependencies
 <pre lang="markdown">npm install</pre>
-🧰 Step 4: Install Main Packages (Dependencies)
+## 🧰 Step 4: Install Main Packages (Dependencies)
 <pre lang="markdown">npm install @tanstack/react-query axios daisyui firebase jsonwebtoken lucide-react react-router-dom react-helmet-async react-hook-form react-icons react-simple-captcha react-tabs sweetalert2 swiper tailwindcss recharts react-parallax react-awesome-slider events prop-types</pre>
-⚙️ Step 5: Install Dev Dependencies
+## ⚙️ Step 5: Install Dev Dependencies
 <pre lang="markdown">npm install -D vite @vitejs/plugin-react eslint postcss autoprefixer globals eslint-plugin-react-hooks eslint-plugin-react-refresh</pre>
-🎨 Step 6: Install Tailwind CSS & DaisyUI
+## 🎨 Step 6: Install Tailwind CSS & DaisyUI
 <pre lang="markdown">npm install -D tailwindcss@3 postcss autoprefixer daisyui@latest</pre>
-🛠️ Step 7: Create Tailwind Config File
+## 🛠️ Step 7: Create Tailwind Config File
 <pre lang="markdown">npx tailwindcss init -p</pre>
-📄 Step 8: Configure Tailwind
+## 📄 Step 8: Configure Tailwind
 
 👉 tailwind.config.js ফাইলে নিচের কোড বসাও:
 
-<pre lang="markdown">/** @type {import('tailwindcss').Config} */ export default { content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}", ], theme: { extend: {}, }, plugins: [require("daisyui")], } </pre>
-🎯 Step 9: Add Tailwind to CSS
+<pre lang="markdown">
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+}
+</pre>
+## 🎯 Step 9: Add Tailwind to CSS
 
 👉 src/index.css ফাইলে লিখো:
 
-<pre lang="markdown">@tailwind base; @tailwind components; @tailwind utilities;</pre>
-📥 Step 10: Import CSS in main.jsx
+<pre lang="markdown">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</pre>
+## 📥 Step 10: Import CSS in main.jsx
 <pre lang="markdown">import './index.css';</pre>
-🌐 Step 11: Setup Router
+## 🌐 Step 11: Setup Router
 🔹 Router File (src/routes/Routes.jsx)
-<pre lang="markdown">import { createBrowserRouter } from 'react-router-dom' import LayOut from '../layouts/LayOut' import Home from '../pages/Home' import Login from '../pages/Authentication/Login' const router = createBrowserRouter([ { path: '/', element: &lt;LayOut /&gt;, children: [ { index: true, element: &lt;Home /&gt;, }, { path: '/login', element: &lt;Login /&gt;, }, ], }, ]) export default router; </pre>
-⚛️ Step 12: Setup main.jsx
-<pre lang="markdown">import React from 'react' import ReactDOM from 'react-dom/client' import './index.css' import { RouterProvider } from 'react-router-dom' import router from './routes/Routes' ReactDOM.createRoot(document.getElementById('root')).render( &lt;React.StrictMode&gt; &lt;RouterProvider router={router} /&gt; &lt;/React.StrictMode&gt; ); </pre>
-▶️ Step 13: Run Project
+<pre lang="markdown">import { createBrowserRouter } from 'react-router-dom'
+import LayOut from '../layouts/LayOut' 
+import Home from '../pages/Home' 
+import Login from '../pages/Authentication/Login' 
+const router = createBrowserRouter([ { path: '/', element: &lt;LayOut /&gt;, children: [ { index: true, element: &lt;Home /&gt;, }, { path: '/login', element: &lt;Login /&gt;, }, ], }, ]) export default router; </pre>
+## ⚛️ Step 12: Setup main.jsx
+<pre lang="markdown">
+import React from 'react' 
+import ReactDOM from 'react-dom/client' 
+import './index.css' 
+import { RouterProvider } from 'react-router-dom' 
+import router from './routes/Routes' ReactDOM.createRoot(document.getElementById('root')).render( &lt;React.StrictMode&gt; &lt;RouterProvider router={router} /&gt; &lt;/React.StrictMode&gt; ); </pre>
+## ▶️ Step 13: Run Project
 <pre lang="markdown">npm run dev</pre>
 🔥 Important Notes
-
 ✅ react-router-dom আলাদা করে আবার install করার দরকার নাই (আগেই করা হয়েছে)
-
 ❌ নিচেরটা unnecessary:
 
 <pre lang="markdown">npm install react-router-dom</pre>
-🧠 Technologies Overview
-🌐 Core
-react
-react-router-dom
-🎨 UI & Styling
-tailwindcss
-daisyui
-react-icons
-lucide-react
-🔄 Data Handling
-axios
-react-query
-📝 Form
-react-hook-form
-react-simple-captcha
-🔐 Auth
-firebase
-jsonwebtoken
-✨ UI Effects
-sweetalert2
-swiper
-recharts
-react-tabs
-react-parallax
-react-awesome-slider
-react-helmet-async
-🧾 Git Commands
-<pre lang="markdown">git init</pre> <pre lang="markdown">git add .</pre> <pre lang="markdown">git commit -m "first commit"</pre> <pre lang="markdown">git branch -M main</pre> <pre lang="markdown">git remote add origin YOUR_REPOSITORY_LINK</pre> <pre lang="markdown">git push -u origin main</pre>
+```🧠 Technologies Overview    🌐 Core     react     react-router-dom    🎨 UI & Styling    tailwindcss     daisyui    react-icons    lucide-react     🔄 Data Handling    axios    react-query     📝 Form    react-hook-form    react-simple-captcha     🔐 Auth   firebase     jsonwebtoken    ✨ UI Effects     sweetalert2    swiper   recharts     react-tabs    react-parallax    react-awesome-slider   react-helmet-async     🧾 Git Commands```
+<pre lang="markdown">git init</pre>
+<pre lang="markdown">git add .</pre> 
+<pre lang="markdown">git commit -m "first commit"</pre> 
+<pre lang="markdown">git branch -M main</pre> 
+<pre lang="markdown">git remote add origin YOUR_REPOSITORY_LINK</pre> 
+<pre lang="markdown">git push -u origin main</pre>
 ✅ Final Flow Summary (Short)
 Create Project
 Enter Folder
@@ -82,6 +84,11 @@ Setup Tailwind
 Config Files
 Setup Router
 Run Project
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # All important Command
 
@@ -137,7 +144,7 @@ c. er cd diye project a giye jaja proyojon install kora
 ---
 ## মূল প্যাকেজগুলো (Dependencies):
 <pre lang="markdown">npm install @tanstack/react-query axios daisyui firebase jsonwebtoken lucide-react react-router-dom react-helmet-async react-hook-form react-icons react-simple-captcha react-tabs sweetalert2 swiper tailwindcss recharts react-parallax react-awesome-slider events prop-types</pre>
-## ডেভেলপমেন্ট টুলস (Dev Dependencies):
+## ডেভেলপমেন্ট টুলস (Dev Dependencies):..................................................................'''''''
 <pre lang="markdown">npm install -D vite @vitejs/plugin-react eslint postcss autoprefixer globals eslint-plugin-react-hooks eslint-plugin-react-refresh</pre>
 
 
